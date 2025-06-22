@@ -228,8 +228,8 @@ Authorization: Bearer <MY_JWT_TOKEN>
 
 ```json
 {
-  "mood": "happy",
-  "song": "Shape of You"
+  "mood": ".....",
+  "song": "......"
 }
 ```
 ![4](https://github.com/user-attachments/assets/3625e6c9-bcf8-4308-b834-b321ceb14a3d)
