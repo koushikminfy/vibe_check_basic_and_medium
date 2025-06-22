@@ -1,12 +1,8 @@
 
-
 ---
 
-###  `README.md`
-
+#  VibeCheck_Easy
 ```markdown
-#  VibeCheck API
-
 
 
 ##  Features
@@ -49,7 +45,7 @@ bun server.js
 ### `GET /`
 
 Returns a simple welcome message:
-
+* `GET http://localhost:5000/`
 ```
  Welcome to VibeCheck API – Check your vibe, share your tribe!
 ```
@@ -58,7 +54,7 @@ Returns a simple welcome message:
 ---
 
 ### `GET /api/v1/vibes`
-
+* `GET http://localhost:5000/api/v1/vibes`
 Returns a list of all sample vibes in JSON format:
 
 ```json
@@ -77,7 +73,7 @@ Returns a list of all sample vibes in JSON format:
 ---
 
 ### `GET /api/v1/vibes/:id`
-
+* `GET http://localhost:5000/api/v1/vibes/1`
 Returns a single vibe matching the provided ID.
 
 **Example:**
@@ -95,7 +91,7 @@ Returns a single vibe matching the provided ID.
 ![3](https://github.com/user-attachments/assets/487d53b3-c14b-4ea8-8313-90bc7bb6c8cd)
 
 If the ID is not found:
-
+* `GET http://localhost:5000/api/v1/vibes/99` (not found)
 ```json
 {
   "success": false,
@@ -106,23 +102,12 @@ If the ID is not found:
 
 ---
 
-##  Testing with Postman 
 
-Examples:
-
-* `GET http://localhost:5000/`
-* `GET http://localhost:5000/api/v1/vibes`
-* `GET http://localhost:5000/api/v1/vibes/1`
-* `GET http://localhost:5000/api/v1/vibes/99` (not found)
-
----
-
-
----
+#  VibeCheck_Advanced 
 
 ```markdown
-#  VibeCheck API _Advanced
----
+
+
 
 ##  Features
 
@@ -132,13 +117,8 @@ Examples:
 -  Public feed showing all vibes with user info
 -  MongoDB Atlas for cloud storage
 
----
-
----
-
 ##  Project Structure
 
-```
 
 vibecheck-api/
 ├── config/             # MongoDB connection
@@ -154,17 +134,9 @@ vibecheck-api/
 
 ---
 
-##  Getting Started
+##  Steps to finish
 
-### 1. Clone and Install
-
-```bash
-git clone https://github.com/your-username/vibecheck-api.git
-cd vibecheck-api
-npm install
-````
-
-### 2. Setup `.env`
+### 1. Setup `.env`
 
 Create a `.env` file in the root directory:
 
@@ -177,7 +149,7 @@ JWT_EXPIRE=30d
 
 >  Never commit this file to Git!
 
-### 3. Start the Server
+### 2. Start the Server
 
 ```bash
 node server.js
@@ -192,11 +164,12 @@ MongoDB Connected: <your_host>
 
 ---
 
-## 🔌 API Endpoints & Postman Test Flow
+##  API Endpoints & Postman Test Flow
 
 ### 1️ Signup Endpoint
 
 **POST** `http://localhost:5000/api/v1/auth/signup`
+
 **Body (JSON):**
 
 ```json
@@ -206,12 +179,14 @@ MongoDB Connected: <your_host>
   "password": "123456"
 }
 ```
+![1](https://github.com/user-attachments/assets/b31a4133-12ef-4563-8e16-fb1371d3c63b)
 
 ---
 
 ### 2️ Login Endpoint *(save the JWT token)*
 
 **POST** `http://localhost:5000/api/v1/auth/login`
+
 **Body (JSON):**
 
 ```json
@@ -220,12 +195,14 @@ MongoDB Connected: <your_host>
   "password": "123456"
 }
 ```
+![2](https://github.com/user-attachments/assets/b8f62945-d1ee-4982-af9f-fe086b6b4bb2)
 
 ---
 
 ### 3️ Post Vibe (Unauthorized - should fail)
 
 **POST** `http://localhost:5000/api/v1/vibes`
+
 **Body (JSON):**
 
 ```json
@@ -234,15 +211,17 @@ MongoDB Connected: <your_host>
   "song": "jai balayya"
 }
 ```
+![3](https://github.com/user-attachments/assets/a4d4635e-9e85-437c-b9e7-d23614e981bc)
 ---
 
 ### 4️ Post Vibe (Authorized - should succeed)
 
 **POST** `http://localhost:5000/api/v1/vibes`
+
 **Headers:**
 
 ```
-Authorization: Bearer <YOUR_JWT_TOKEN>
+Authorization: Bearer <MY_JWT_TOKEN>
 ```
 
 **Body (JSON):**
@@ -253,6 +232,7 @@ Authorization: Bearer <YOUR_JWT_TOKEN>
   "song": "Shape of You"
 }
 ```
+![4](https://github.com/user-attachments/assets/3625e6c9-bcf8-4308-b834-b321ceb14a3d)
 
 
 ---
@@ -260,8 +240,13 @@ Authorization: Bearer <YOUR_JWT_TOKEN>
 ### 5️ Get All Vibes
 
 **GET** `http://localhost:5000/api/v1/vibes`
+![5](https://github.com/user-attachments/assets/0e04d155-d16f-4189-9375-90b70065b91a)
 
 
+---
+
+### 6.Check the data in mongodb
+![6](https://github.com/user-attachments/assets/3bcf716e-000a-43a4-8d62-57c39523602d)
 
 ---
 
